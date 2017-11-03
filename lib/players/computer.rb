@@ -15,7 +15,6 @@ module Players
      ]
 
     def move(board)
-      board.cells = [" ", " ", " ", " ", "X", " ", " ", "", " "]
       corners = ["1", "3", "7", "9"]
       opponents_almost_win = nil
 
