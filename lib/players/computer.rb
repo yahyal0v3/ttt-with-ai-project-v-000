@@ -35,7 +35,7 @@ module Players
         WIN_COMBINATIONS.each do |win_combination|
           missing_spaces = win_combination - opponents_almost_win
           missing_space = missing_spaces if missing_spaces.size == 1
-          move = missing_space.join if missing_space != nil 
+          move = missing_space.join if missing_space != nil
         end
       end
 
