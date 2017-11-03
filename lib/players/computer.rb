@@ -15,7 +15,6 @@ module Players
      ]
 
     def move(board)
-      board.cells = ["O", " ", "X", " ", "X", " ", "O", "X", "O"]
       corners = ["1", "3", "7", "9"]
       opponents_almost_win = nil
 
@@ -34,7 +33,7 @@ module Players
         WIN_COMBINATIONS.each do |win_combination|
           missing_spaces = win_combination - opponents_almost_win
           missing_space = missing_spaces if missing_spaces.size == 1
-          saving_move = missing_space.join if missing_space != nil 
+          saving_move = missing_space.join if missing_space != nil
         end
       end
 
