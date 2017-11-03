@@ -21,12 +21,12 @@ module Players
       opponents_almost_win = nil
 
       WIN_COMBINATIONS.each do |win_combination|
-        if self.token == "X" 
+        if self.token == "X"
           opponents_positions = win_combination.select {|position| board.position(position) == "O"}
           opponents_almost_win = opponents_positions if opponents_positions.length == 2
         elsif self.token == "O"
           opponents_positions = win_combination.select {|position| board.position(position) == "X"}
-          opponents_almost_win = opponents_positions if opponents_positions.length == 2 
+          opponents_almost_win = opponents_positions if opponents_positions.length == 2
         end
       end
 
