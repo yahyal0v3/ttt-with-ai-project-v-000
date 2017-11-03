@@ -30,10 +30,12 @@ module Players
         end
       end
 
-      move = nil
-      WIN_COMBINATIONS.each do |win_combination|
-        missing_position = win_combination - opponents_almost_win if opponents_almost_win != nil 
-        move = missing_position if missing_position.size == 1
+      if opponents_almost_win != nil
+        move = nil
+        WIN_COMBINATIONS.each do |win_combination|
+          missing_position = win_combination - opponents_almost_win 
+          move = missing_position if missing_position.size == 1
+        end
       end
 
       if board.taken?("5") == false
