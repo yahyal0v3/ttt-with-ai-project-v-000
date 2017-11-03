@@ -37,7 +37,7 @@ class Board
   end
 
   def taken?(position)
-    cells[position.to_i - 1] != " "
+    cells[position.to_i - 1] == "X" || cells[position.to_i - 1] == "O" 
   end
 
   def valid_move?(position)
