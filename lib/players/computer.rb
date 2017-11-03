@@ -32,7 +32,7 @@ module Players
 
       move = nil
       WIN_COMBINATIONS.each do |win_combination|
-        missing_position = win_combination - opponents_almost_win
+        missing_position = win_combination - opponents_almost_win if opponents_almost_win != nil 
         move = missing_position if missing_position.size == 1
       end
 
