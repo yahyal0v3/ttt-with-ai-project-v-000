@@ -40,7 +40,7 @@ module Players
 
       if board.taken?("5") == false
         "5"
-      elsif move != nil && board.taken?(move.join) == false 
+      elsif move != nil && board.taken?(move.join) == false
         move.join
       elsif corners.any? {|position| board.taken?(position) == false}
         corners.sample
