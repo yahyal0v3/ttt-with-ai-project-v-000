@@ -15,8 +15,8 @@ module Players
      ]
 
     def move(board)
-      #binding.pry
-      #board.cells = ["O", " ", " ", " ", "X", " ", " ", " ", " "]
+      binding.pry
+      board.cells = ["O", " ", " ", " ", "X", " ", " ", " ", " "]
       corners = ["1", "3", "7", "9"]
       opponents_almost_win = nil
 
@@ -40,7 +40,7 @@ module Players
 
       if board.taken?("5") == false
         "5"
-      elsif move != nil && board.taken?(move.join) == false
+      elsif move != nil && board.taken?(move.join) == false 
         move.join
       elsif corners.any? {|position| board.taken?(position) == false}
         corners.sample
