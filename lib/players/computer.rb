@@ -41,7 +41,7 @@ module Players
 
       if board.taken?("5") == false
         "5"
-      elsif saving_move != nil && board.valid_move?(saving_move) == true
+      elsif saving_move != "0" && board.valid_move?(saving_move) == true
         saving_move
       elsif corners.any? {|position| board.taken?(position) == false}
         corners.sample
