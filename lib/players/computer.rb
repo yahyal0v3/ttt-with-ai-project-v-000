@@ -31,7 +31,7 @@ module Players
       end
 
       if opponents_almost_win != nil
-        move = nil
+        move = " "
         WIN_COMBINATIONS.each do |win_combination|
           missing_spaces = win_combination - opponents_almost_win
           missing_space = missing_spaces if missing_spaces.size == 1
