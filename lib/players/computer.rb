@@ -16,7 +16,7 @@ module Players
 
     def move(board)
       binding.pry
-      board.cells = ["O", "X", "X", " ", "X", " ", "O", "X", "O"]
+      board.cells = ["O", " ", "X", " ", "X", " ", "O", "X", "O"]
       corners = ["1", "3", "7", "9"]
       opponents_almost_win = nil
 
