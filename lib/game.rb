@@ -58,7 +58,6 @@ class Game
   end
 
   def turn
-    binding.pry
     player = self.current_player
     players_move = player.move(self.board)
     if board.valid_move?(players_move)
