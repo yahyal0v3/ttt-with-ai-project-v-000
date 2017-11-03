@@ -28,7 +28,7 @@ module Players
         end
       end
 
-      move = []
+      move = nil
       WIN_COMBINATIONS.each do |win_combination|
         missing_position = win_combination - opponents_almost_win
         move = missing_position if missing_position.size == 1
@@ -36,7 +36,7 @@ module Players
 
       if board.taken?("5") == false
         "5"
-      elsif move != [] && board.taken?(move.join) == false
+      elsif move != nil && board.taken?(move.join) == false
         move.join
       elsif corners.any? {|position| board.taken?(position) == false}
         corners.sample
