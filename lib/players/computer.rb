@@ -15,16 +15,18 @@ module Players
      ]
 
     def move(board)
+      binding.pry
+      board.cells = ["O", "X", "X", " ", "X", " ", "O", "X", "O"]
       corners = ["1", "3", "7", "9"]
       opponents_almost_win = nil
 
       WIN_COMBINATIONS.each do |win_combination|
-        if self.token == "X"
+        if self.token == "X" 
           opponents_positions = win_combination.select {|position| board.position(position) == "O"}
           opponents_almost_win = opponents_positions if opponents_positions.length == 2
         elsif self.token == "O"
           opponents_positions = win_combination.select {|position| board.position(position) == "X"}
-          opponents_almost_win = opponents_positions if opponents_positions.length == 2
+          opponents_almost_win = opponents_positions if opponents_positions.length == 2 
         end
       end
 
@@ -33,7 +35,7 @@ module Players
         WIN_COMBINATIONS.each do |win_combination|
           missing_spaces = win_combination - opponents_almost_win
           missing_space = missing_spaces if missing_spaces.size == 1
-          saving_move = missing_space.join if missing_space != nil
+          saving_move = missing_space.join if missing_space != nil && win_combination.all? {|position| board.position(position) == "X" || board.position(position) == "O"} == false
         end
       end
 
