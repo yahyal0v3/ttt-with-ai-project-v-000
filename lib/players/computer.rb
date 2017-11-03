@@ -25,8 +25,8 @@ module Players
           opponents_positions = win_combination.select {|position| board.position(position) == "O"}
           opponents_almost_win = opponents_positions if opponents_positions.length == 2
         elsif self.token == "O"
-            opponents_positions = win_combination.select {|position| board.position(position) == "X"}  
-            opponents_almost_win = opponents_positions if opponents_positions.length == 2 && win_combination.all? {|position| board.position(position) == "X" || board.position(position) == "O"} == false
+          opponents_positions = win_combination.select {|position| board.position(position) == "X"}
+          opponents_almost_win = opponents_positions if opponents_positions.length == 2
         end
       end
 
