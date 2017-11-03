@@ -15,8 +15,8 @@ module Players
      ]
 
     def move(board)
-      binding.pry
-      board.cells = ["O", " ", " ", " ", "X", " ", " ", " ", " "]
+      #binding.pry
+      #board.cells = ["O", " ", " ", " ", "X", " ", " ", " ", " "]
       corners = ["1", "3", "7", "9"]
       opponents_almost_win = nil
 
@@ -33,7 +33,7 @@ module Players
       if opponents_almost_win != nil
         move = nil
         WIN_COMBINATIONS.each do |win_combination|
-          missing_position = win_combination - opponents_almost_win 
+          missing_position = win_combination - opponents_almost_win
           move = missing_position if missing_position.size == 1
         end
       end
